@@ -26,3 +26,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/dashboard', 'AdminController@index')->name('dashboard');
+Route::get('/application/{id}', 'AdminController@application')->name('application');
+
+

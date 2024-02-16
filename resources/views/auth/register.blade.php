@@ -4,14 +4,15 @@
         .select2-container {
             width: 100% !important;
         }
-       .card-body label, select, option, textarea {
+
+       .card-body label, select, option, textarea, li {
             font-size: .9em;
-            font-family: "Arial", sans-serif;
+            font-family: "Arial", sans-serif !important;
         }
 
         .card-body input {
             font-size: .9em;
-            font-family: "Arial", sans-serif;
+            font-family: "Arial", sans-serif !important;
         }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -173,7 +174,7 @@
                             <div id="exhibition_form">
                                 <div class="form-group row">
                                     <div class="col-md-6">
-                                        <label for="">For Exhibition</strong></label>
+                                        <label for=""><strong><u><h3>For Exhibition:</h3></u></strong></label>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -208,6 +209,53 @@
                                         </select>
                                     </div>
                                 </div>
+
+
+
+                                <div class="form-group row">
+                                    <div class="col-md-1">
+                                        <input type="checkbox" id="exib_services_checkbox" name="exib_services_checkbox"
+                                            value="yes"
+                                            {{ old('exib_services_checkbox') == 'yes' ? 'checked' : '' }}
+                                            style="float:right">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="" style="margin-top: 10px;"><strong>Services</strong></label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="services_exib" id="services_exib" value="{{ old('services_exib')}}">
+                                    </div>
+                                </div><br />
+                                <div class="form-group row">
+                                    <div class="col-md-1">
+                                        <input type="checkbox" id="exib_machinery_checkbox" name="exib_machinery_checkbox"
+                                            value="yes"
+                                            {{ old('exib_machinery_checkbox') == 'yes' ? 'checked' : '' }}
+                                            style="float:right">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="" style="margin-top: 10px;"><strong>Machinery</strong></label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="machinery_exib" id="machinery_exib" value="{{ old('machinery_exib')}}">
+                                    </div>
+                                </div><br />
+                                <div class="form-group row">
+                                    <div class="col-md-1">
+                                        <input type="checkbox" id="exib_packaging_checkbox" name="exib_packaging_checkbox"
+                                            value="yes"
+                                            {{ old('exib_packaging_checkbox') == 'yes' ? 'checked' : '' }}
+                                            style="float:right">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="" style="margin-top: 10px;"><strong>Packaging</strong></label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="packaging_exib" id="packaging_exib" value="{{ old('packaging_exib')}}">
+                                    </div>
+                                </div>
+
+
                                 <div class="form-group row">
                                     <div class="col-md-6">
                                         <label for="fssai" class="col-md-12 col-form-label text-md-right"><strong> Whether you
@@ -257,7 +305,7 @@
                             <div id="btob_form">
                                 <div class="form-group row">
                                     <div class="col-md-6">
-                                        <label for="">For B2B Meetings</strong></label>
+                                        <label for=""><strong><u><h3>For B2B Meetings:</h3></u></strong></label>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -296,29 +344,17 @@
                                                             </option>
                                                         @endforeach
                                                     </select>
-                                                {{-- <select id="buy_raw_materials"
-                                                    class="form-control @error('buy_raw_materials') is-invalid @enderror"
-                                                    name="buy_raw_materials">
-                                                    <option value="">--select--</option>
-                                                    <option value="Yes"
-                                                        {{ old('buy_raw_materials') == 'Yes' ? 'selected' : '' }}>Yes</option>
-                                                    <option value="No" {{ old('buy_raw_materials') == 'No' ? 'selected' : '' }}>
-                                                        No</option>
-                                                </select> --}}
+                                            </div>
+                                            <div class="form-group row" id="buy_other_raw_materials">
+                                                <div class="col-md-1"></div>
+                                                <div class="col-md-9">
+                                                    <input type="text" name="buy_other_raw_materials" class="col-md-8 form-control" value="{{old('buy_other_raw_materials')}}" placeholder="Specify Other raw materials">
+                                                </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="buy_processed"
                                                     class="col-md-12 col-form-label text-md-right"><strong>Processed food products
                                                 </strong></label>
-                                                {{-- <select id="buy_processed"
-                                                    class="form-control @error('buy_processed') is-invalid @enderror"
-                                                    name="buy_processed">
-                                                    <option value="">--select--</option>
-                                                    <option value="Yes" {{ old('buy_processed') == 'Yes' ? 'selected' : '' }}>Yes
-                                                    </option>
-                                                    <option value="No" {{ old('buy_processed') == 'No' ? 'selected' : '' }}>No
-                                                    </option>
-                                                </select> --}}
                                                 <select id="buy_processed"
                                                     class="js-example-basic-multiple  @error('buy_processed') is-invalid @enderror"
                                                     name="buy_processed[]" multiple="multiple">
@@ -393,15 +429,12 @@
                                                             </option>
                                                         @endforeach
                                                     </select>
-                                                {{-- <select id="sell_raw_materials"
-                                                    class="form-control @error('sell_raw_materials') is-invalid @enderror"
-                                                    name="sell_raw_materials">
-                                                    <option value="">--select--</option>
-                                                    <option value="Yes"
-                                                        {{ old('sell_raw_materials') == 'Yes' ? 'selected' : '' }}>Yes</option>
-                                                    <option value="No" {{ old('sell_raw_materials') == 'No' ? 'selected' : '' }}>
-                                                        No</option>
-                                                </select> --}}
+                                            </div>
+                                            <div class="form-group row" id="sell_other_raw_materials">
+                                                <div class="col-md-1"></div>
+                                                <div class="col-md-9">
+                                                    <input type="text" name="sell_other_raw_materials" class="col-md-8 form-control" value="{{old('sell_other_raw_materials')}}" placeholder="Specify Other raw materials">
+                                                </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="sell_processed"
@@ -478,6 +511,7 @@
                             <div id="btog_form">
                                 <div class="form-group row">
                                     <div class="col-md-6">
+                                        <label for=""><strong><u><h3>For B2B Meetings:</h3></u></strong></label>
                                         <label for="">For B2G Meetings</strong></label>
                                     </div>
                                 </div>
@@ -654,6 +688,30 @@
         $(document).ready(function() {
             $('.js-example-basic-multiple').select2();
         });
+
+
+        $("#buy_other_raw_materials").hide();
+        $("#buy_raw_materials").change(function(){
+            var val = String($(this).val());
+            var otherExists = val.split(',').some(item => /Other/i.test(item.trim()));
+            if (otherExists) {
+                $("#buy_other_raw_materials").show();
+            }else{
+                $("#buy_other_raw_materials").hide();
+            }
+        });
+        $("#sell_other_raw_materials").hide();
+        $("#sell_raw_materials").change(function(){
+            var val = String($(this).val());
+            var otherExists = val.split(',').some(item => /Other/i.test(item.trim()));
+            if (otherExists) {
+                $("#sell_other_raw_materials").show();
+            }else{
+                $("#sell_other_raw_materials").hide();
+            }
+        });
+
+
         $("#exhibition_form").hide();
         $("#btob_form").hide();
         $("#btog_form").hide();
@@ -726,6 +784,18 @@
                 alert("Please select at least one participation category.");
                 return false;
             }
+
+            if($("#btob_meeting").prop("checked")==true){
+                // alert("ok");
+                var selling_new = $("#selling").prop("checked");
+                var buying_new = $("#buying").prop("checked");
+                // alert(selling_new);
+                // alert(buying_new);
+                if (selling_new === false && buying_new===false) {
+                    alert("Please select selling or buying options.");
+                    return false;
+                }
+            };
             if($("#selling").prop("checked")==true){
                 var rawMaterialsCheckbox = document.getElementById("sell_raw_materials").value;
                 var processedCheckbox = document.getElementById("sell_processed").value;
@@ -873,6 +943,53 @@
     }
     if (sell_sec == true) {
         $("#selling_section").show();
+    }
+
+
+</script>
+
+<script>
+    // services_buy  machinery_buy  packaging_buy
+    $("#services_exib").hide();
+    $("#machinery_exib").hide();
+    $("#packaging_exib").hide();
+
+    $("#exib_services_checkbox").click(function() {
+        var isChecked = $(this).prop("checked");
+        if (isChecked) {
+            $("#services_exib").show();
+        } else {
+            $("#services_exib").hide();
+        }
+    })
+    $("#exib_machinery_checkbox").click(function() {
+        var isChecked = $(this).prop("checked");
+        if (isChecked) {
+            $("#machinery_exib").show();
+        } else {
+            $("#machinery_exib").hide();
+        }
+    })
+    $("#exib_packaging_checkbox").click(function() {
+        var isChecked = $(this).prop("checked");
+        if (isChecked) {
+            $("#packaging_exib").show();
+        } else {
+            $("#packaging_exib").hide();
+        }
+    })
+
+    var ser_exib = $("#exib_services_checkbox").prop("checked");
+    var mac_exib = $("#exib_machinery_checkbox").prop("checked");
+    var pac_exib = $("#exib_packaging_checkbox").prop("checked");
+    if (ser_exib == true) {
+        $("#services_exib").show();
+    }
+    if (mac_exib == true) {
+        $("#machinery_exib").show();
+    }
+    if (pac_exib == true) {
+        $("#packaging_exib").show();
     }
 </script>
 @endsection

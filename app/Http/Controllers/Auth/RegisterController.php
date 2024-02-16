@@ -54,7 +54,7 @@ class RegisterController extends Controller
     {
         $states = State::where('status','Active')->get();
         $profile_type = ProfileType::where('status','Active')->get();
-        $product = Product::where('status','Active')->get();
+        $product = Product::where('status','Active')->orderby('name')->get();
         $turnover = Turnover::where('status','Active')->get();
         $domain = DomainOfInterest::where('status','Active')->get();
         $sub_of_discuss = SubOfDiscussion::where('status','Active')->get();
@@ -113,14 +113,14 @@ class RegisterController extends Controller
         // }
         if(isset($data['btog_meeting'])){
             $rules = array_merge($rules, [
-                "domain" => ['required'],
-                "sub_of_dis" => ['required'],
+                "domain" => 'required|array',
+                "sub_of_dis" => 'required|array',
             ]);
-            if($data['sub_of_dis']=='Others'){
-                $rules = array_merge($rules, [
-                    "other_discussion" => ['required', 'string', 'max:255'],
-                ]);
-            }
+            // if($data['sub_of_dis']=='Others'){
+            //     $rules = array_merge($rules, [
+            //         "other_discussion" => ['required', 'string', 'max:255'],
+            //     ]);
+            // }
         }
         return Validator::make($data, $rules);
     }
@@ -130,6 +130,7 @@ class RegisterController extends Controller
     }
     protected function create(array $data)
     {
+        // dd($data);
         $path = null;
         if(isset($data['product_img'])){
             $destinationPath = public_path('uploads/nefp2024');
@@ -139,7 +140,6 @@ class RegisterController extends Controller
             $path = 'uploads/nefp2024/'.$uploaded_photo_name;
             // dd('uploads/nefp2024/'.$uploaded_photo_name);
         }
-
 
         return User::create([
             'first_name' => $data['f_name'],
@@ -166,6 +166,7 @@ class RegisterController extends Controller
             'buying' =>$data['buying']??null,
             'selling' =>$data['selling']??null,
             'buy_raw_materials' =>$this->encode_decode($data['buy_raw_materials']??null),
+            'buy_other_raw_materials' => $data['buy_other_raw_materials']??null,
             'buy_processed' =>$this->encode_decode($data['buy_processed']??null),
             'buy_services_checkbox' =>$data['buy_services_checkbox']??null,
             'services_buy' =>$data['services_buy']??null,
@@ -174,6 +175,7 @@ class RegisterController extends Controller
             'buy_packaging_checkbox' =>$data['buy_packaging_checkbox']??null,
             'packaging_buy' =>$data['packaging_buy']??null,
             'sell_raw_materials' =>$this->encode_decode($data['sell_raw_materials']??null),
+            'sell_other_raw_materials' => $data['sell_other_raw_materials']??null,
             'sell_processed' =>$this->encode_decode($data['sell_processed']??null),
             'sell_services_checkbox' =>$data['sell_services_checkbox']??null,
             'services_sell' =>$data['services_sell']??null,
@@ -188,6 +190,9 @@ class RegisterController extends Controller
             'second' =>$data['second']??null,
             'third' =>$data['third']??null,
             'product_img' => $path,
+            'services_exib' => $data['services_exib']??null,
+            'machinery_exib' => $data['machinery_exib']??null,
+            'packaging_exib' => $data['packaging_exib']??null,
         ]);
     }
 }
