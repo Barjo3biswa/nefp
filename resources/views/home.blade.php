@@ -14,13 +14,15 @@
                         </div>
                     @endif
                     <div class="alert alert-success" role="alert">
-                        <h1>Your Registration is successfull. Please watchout for More Updates</h1>
+                        <h1>Welcome to your login page. Your business match will appear here.
+                            Your email id is your username.
+                        </h1>
                       </div>
-                    
-                    {{-- <form id="logoutform" action="{{ route('logout') }}" method="POST">
+
+                    <form id="logoutform" action="{{ route('logout') }}" method="POST">
                         {{ csrf_field() }}
                         <input type="submit" class="btn btn-primary" value="logout" >
-                    </form> --}}
+                    </form>
                     {{-- <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
                         <a class="dropdown-item" href="javascript:void(0)"
                             onclick="event.preventDefault(); document.getElementById('logoutform').submit();">

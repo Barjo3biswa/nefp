@@ -33,7 +33,11 @@ class LoginController extends Controller
      *
      * @return void
      */
-
+    public function showLoginForm()
+    {
+        // dd("ok");
+        return view('auth.login');
+    }
 
     public function __construct()
     {
