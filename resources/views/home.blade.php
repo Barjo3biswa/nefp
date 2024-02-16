@@ -19,10 +19,10 @@
                         </h1>
                       </div>
 
-                    <form id="logoutform" action="{{ route('logout') }}" method="POST">
+                    {{-- <form id="logoutform" action="{{ route('logout') }}" method="POST">
                         {{ csrf_field() }}
                         <input type="submit" class="btn btn-primary" value="logout" >
-                    </form>
+                    </form> --}}
                     {{-- <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
                         <a class="dropdown-item" href="javascript:void(0)"
                             onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
