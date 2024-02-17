@@ -31,8 +31,8 @@ Route::get('/admin',[LoginController::class,'showAdminLoginForm'])->name('admin.
 Route::post('/admin',[LoginController::class,'adminLogin'])->name('admin.login');
 
 
-Route::get('/dashboard', 'AdminController@index')->name('dashboard');
-Route::get('/application/{id}', 'AdminController@application')->name('application');
-Route::get('/view-indiv/{id}', 'AdminController@viewIndv')->name('view-indiv');
+Route::get('/dashboard', 'AdminController@index')->name('dashboard')->middleware('auth:admin');
+Route::get('/application/{id}', 'AdminController@application')->name('application')->middleware('auth:admin');
+Route::get('/view-indiv/{id}', 'AdminController@viewIndv')->name('view-indiv')->middleware('auth:admin');
 
 

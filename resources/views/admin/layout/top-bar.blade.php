@@ -28,7 +28,7 @@
 
                 <li class="user-profile header-notification">
                     <a href="#!">
-                        <span>{{-- {{Auth::user()->name}} --}}</span>
+                        <span>{{Auth::user()->name}}</span>
                         <i class="ti-angle-down"></i>
                     </a>
                     <ul class="show-notification profile-notification">
