@@ -1,5 +1,21 @@
 @extends('layouts.front-app')
+@section('css')
+    <style>
+        .select2-container {
+            width: 100% !important;
+        }
 
+       .card-body label, select, option, textarea, li {
+            font-size: .9em;
+            font-family: "Arial", sans-serif !important;
+        }
+
+        .card-body input {
+            font-size: .9em;
+            font-family: "Arial", sans-serif !important;
+        }
+    </style>
+@endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
