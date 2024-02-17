@@ -155,12 +155,15 @@ $(document).ready(function() {
     //     "pageLength": 100
     // });
     new DataTable('#dtExample', {
-    layout: {
+        layout: {
         topStart: {
-            buttons: ['excel']
+                buttons: ['excel']
+            }
+        },
+        pagination: {
+            perPage: 100
         }
-    }
-});
+    });
 });
 
 </script>
