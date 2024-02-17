@@ -48,7 +48,7 @@
     <label for=""><strong><u><h3>For Exhibition:</h3></u></strong></label>
     <table class="table table-bordered">
         @php
-            $producttt = json_decode($application->product);
+            $producttt = json_decode($application->product)??[];
         @endphp
         <tr>
             <th>Products</th>
@@ -93,8 +93,8 @@
         </tr>
         <tr>
             @php
-                $raw_materialsi = json_decode($application->buy_raw_materials);
-                $raw_materialsii = json_decode($application->sell_raw_materials);
+                $raw_materialsi = json_decode($application->buy_raw_materials)??[];
+                $raw_materialsii = json_decode($application->sell_raw_materials)??[];
             @endphp
             <th>buy_raw_materials</th>
             <td >@foreach ($raw_materialsi as $mat)<span class="badge badge-secondary" >{{$mat}}</span> &nbsp;@endforeach</td>
@@ -109,8 +109,8 @@
         </tr>
         <tr>
             @php
-                $buy_processedi = json_decode($application->buy_processed);
-                $buy_processedii = json_decode($application->sell_processed);
+                $buy_processedi = json_decode($application->buy_processed)??[];
+                $buy_processedii = json_decode($application->sell_processed)??[];
             @endphp
             <th>buy_processed</th>
             <td >@foreach ($buy_processedi as $mat)<span class="badge badge-secondary" >{{$mat}}</span> &nbsp;@endforeach</td>
@@ -159,8 +159,8 @@
     <label for=""><strong><u><h3>For B2G Meetings:</h3></u></strong></label>
     <table class="table table-bordered">
         @php
-            $domain = json_decode($application->domain);
-            $sub_of_dis = json_decode($application->sub_of_dis);
+            $domain = json_decode($application->domain)??[];
+            $sub_of_dis = json_decode($application->sub_of_dis)??[];
         @endphp
         <tr>
             <th>domain</th>
