@@ -10,7 +10,11 @@ class AdminController extends Controller
 {
 
     public function index(){
-        return view("admin.index");
+        $exibition  = User::where('Exhibition','yes')->get()->count();
+        $btob_meeting  = User::where('btob_meeting','yes')->get()->count();
+        $btog_meeting  = User::where('btog_meeting','yes')->get()->count();
+        // dd("ok");
+        return view("admin.index",compact('exibition','btob_meeting','btog_meeting'));
     }
 
     public function application($id){
@@ -20,7 +24,16 @@ class AdminController extends Controller
         } catch (\Exception $e) {
 
         }
-        $application = User::get();
+        if($decrypted=='all'){
+            $application = User::get();
+        }else if($decrypted=='b2b'){
+            $application = User::where('btob_meeting','yes')->get();
+        }else if($decrypted=='b2g'){
+            $application = User::where('btog_meeting','yes')->get();
+        }else if($decrypted=='exi'){
+            $application = User::where('Exhibition','yes')->get();
+        }
+
         return view("admin.application-list", compact('decrypted','application'));
     }
 }

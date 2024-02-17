@@ -10,14 +10,14 @@
             </a>
         </li>
         <li class="pcoded-hasmenu">
-            <a href="{{route('application',[Crypt::encrypt('exi')])}}">
+            <a href="{{route('application',[Crypt::encrypt('all')])}}">
                 <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
                 <span class="pcoded-mtext"
-                    data-i18n="nav.basic-components.main">Exhibition</span>
+                    data-i18n="nav.basic-components.main">Applications</span>
                 <span class="pcoded-mcaret"></span>
             </a>
         </li>
-        <li class="pcoded-hasmenu">
+        {{-- <li class="pcoded-hasmenu">
             <a href="{{route('application',[Crypt::encrypt('b2b')])}}">
                 <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
                 <span class="pcoded-mtext"
@@ -32,7 +32,7 @@
                     data-i18n="nav.basic-components.main">B2G</span>
                 <span class="pcoded-mcaret"></span>
             </a>
-        </li>
+        </li> --}}
         <li class="pcoded-hasmenu">
             <a href="javascript:void(0)">
                 <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>

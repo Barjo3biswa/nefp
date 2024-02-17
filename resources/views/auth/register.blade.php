@@ -511,8 +511,8 @@
                             <div id="btog_form">
                                 <div class="form-group row">
                                     <div class="col-md-6">
-                                        <label for=""><strong><u><h3>For B2B Meetings:</h3></u></strong></label>
-                                        <label for="">For B2G Meetings</strong></label>
+                                        <label for=""><strong><u><h3>For B2G Meetings:</h3></u></strong></label>
+                                        {{-- <label for="">For B2G Meetings</strong></label> --}}
                                     </div>
                                 </div>
                                 <div class="form-group row">
