@@ -82,12 +82,11 @@
                 <div class="main-nav-content">
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <img src="assets/logo/nefo_logo.png" alt="Logo"></a>
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target="#navbar-menu">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i class="fa fa-times"></i>
                         </button>
 
-                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        {{-- <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">About NE Food
                                     Pro</a>
@@ -200,20 +199,142 @@
                             </li>
                             <li class="dropdown">
                                 <a href="javascript:void(0)">Contact Us</a>
+                            </li> --}}
+                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About NE Food Pro</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle"
+                                            data-toggle="dropdown">NE
+                                            Food
+                                            Pro 2024</a>
+                                        <ul>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="https://nefoodpro.com/about-us.html">About</a></li>
+                                                <li><a href="https://nefoodpro.com/pdf/New Northeast food processing Brochure.pdf"
+                                                        target="_blank">Brochure</a></li>
+                                                <li><a href="key_elements.html">Key Elements</a></li>
+                                            </ul>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="#" class="dropdown-toggle"
+                                            data-toggle="dropdown">NE Food
+                                            Fest 2023</a>
+                                        <ul>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="https://nefoodpro.com/pdf/food_fest-2023/ne_food-fest-report_2023.pdf"
+                                                        target="_blank">Reports</a></li>
+                                                <li><a href="https://nefoodpro.com/pdf/food_fest-2023/exhibitor_list.pdf"
+                                                        target="_blank">Exhibitors list</a></li>
+                                                <li><a href="https://nefoodpro.com/pdf/food_fest-2023/technical_seminar.pdf"
+                                                        target="_blank">Technical Seminars</a>
+                                                </li>
+                                                <li><a href="https://nefoodpro.com/gallery-2023.html">Photo Gallery</a></li>
+                                            </ul>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Why Visit NE Food
+                                    Pro</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown">
+                                        <a href="https://nefoodpro.com/why_visit.html">Why Visit</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="https://nefoodpro.com/who_attend.html">Who should Attend</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="https://nefoodpro.com/how-to-reach.html">How to Reach</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="https://nefoodpro.com/hotels.html">Hotels & Accomodations</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Invest in Assam</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown">
+                                        <a href="https://nefoodpro.com/introducing_assam_01.html">Introducing Assam</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="https://nefoodpro.com/connectivity.html">Connectivity</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="https://nefoodpro.com/industrial_infrastructure.html">Industrial Infrastructure</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="https://nefoodpro.com/policies_&_regulatory_act.html">Policies & Regulatory Act</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="https://nefoodpro.com/focus_on_agrihorti_sectors.html">Focus on Agrihorti Sectors</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="https://nefoodpro.com/major_players_in_food_processing.html">Major Players in Food
+                                            Processing</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Register</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown">
+                                        <a href="{{route('register')}}">Resgistration</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="{{route('login')}}">Log in</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0)">Exhibitor Profile</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0)">B2B/B2G Profile</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0)">Print Pass</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Media & Gallery</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown">
+                                        <a href="https://nefoodpro.com/gallery.html">NE Photo Gallery</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="https://nefoodpro.com/javascript:void(0)">Press</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="https://nefoodpro.com/audio.html">Radio Jingle</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="https://nefoodpro.com/iec.html">IEC</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="https://nefoodpro.com/javascript:void(0)">Video Gallery</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#contact">Contact Us</a>
                             </li>
 
 
-                            @if(Auth::check())
+                            @if (Auth::check())
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::User()->first_name.' '.Auth::User()->mioddle_name.' '.Auth::User()->last_name}}</a>
+                                    <a href="#" class="dropdown-toggle"
+                                        data-toggle="dropdown">{{ Auth::User()->first_name . ' ' . Auth::User()->mioddle_name . ' ' . Auth::User()->last_name }}</a>
                                     <ul class="dropdown-menu">
                                         <li class="dropdown">
                                             <a class="dropdown-item" href="javascript:void(0)"
-                                            onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
-                                            <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
+                                                onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
+                                                <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
                                         </li>
                                     </ul>
-                                    <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logoutform" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
                                 </li>

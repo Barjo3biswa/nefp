@@ -36,4 +36,15 @@ class AdminController extends Controller
 
         return view("admin.application-list", compact('decrypted','application'));
     }
+
+    public function viewIndv($id){
+        try {
+            $decrypted = Crypt::decrypt($id);
+        } catch (\Exception $e) {
+
+        }
+        $application = User::where('id',$decrypted)->first();
+        return view("admin.show", compact('decrypted','application'));
+        // dd($application);
+    }
 }

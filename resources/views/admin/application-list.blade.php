@@ -136,7 +136,7 @@
                                 <td style="display: none;">{{$app->gen_status}}</td>
                                 <td style="display: none;">{{$app->product_img}}</td>
                                 <th>
-                                    <a href="#" class="btn btn-primary btn-xs">View</a>
+                                    <a href="{{route('view-indiv',[Crypt::encrypt($app->id)])}}" class="btn btn-primary btn-xs">View</a>
                                 </th>
                             </tr>
                             @endforeach
