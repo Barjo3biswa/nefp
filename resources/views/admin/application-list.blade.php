@@ -160,9 +160,7 @@ $(document).ready(function() {
                 buttons: ['excel']
             }
         },
-        pagination: {
-            perPage: 100
-        }
+        pageLength: 100
     });
 });
 
