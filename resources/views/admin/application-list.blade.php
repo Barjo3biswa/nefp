@@ -29,10 +29,10 @@
                                 <th>State</th>
                                 <th style="display: none;">pin_code</th>
                                 <th style="display: none;">profile_type</th>
-                                <th >Exhibition</th>
-                                <th >btob_meeting</th>
-                                <th >btog_meeting</th>
-                                <th >general</th>
+                                <th style="display: none;">Exhibition</th>
+                                <th style="display: none;">btob_meeting</th>
+                                <th style="display: none;">btog_meeting</th>
+                                <th style="display: none;">general</th>
                                 <th style="display: none;">Products</th>
 
                                 <td style="display: none;">Services</td>
@@ -89,10 +89,10 @@
                                 <td>{{$app->State->name}}</td>
                                 <td style="display: none;">{{$app->pin_code}}</td>
                                 <td style="display: none;">{{$app->profile_type}}</td>
-                                <td>{{$app->Exhibition}}</td>
-                                <td>{{$app->btob_meeting}}</td>
-                                <td>{{$app->btog_meeting}}</td>
-                                <td>{{$app->general}}</td>
+                                <td style="display: none;">{{$app->Exhibition}}</td>
+                                <td style="display: none;">{{$app->btob_meeting}}</td>
+                                <td style="display: none;">{{$app->btog_meeting}}</td>
+                                <td style="display: none;">{{$app->general}}</td>
                                 <td style="display: none;">{{$app->product}}</td>
 
                                 <td style="display: none;">{{$app->services_exib}}</td>
