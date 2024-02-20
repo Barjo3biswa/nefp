@@ -133,7 +133,7 @@
                                                 @endforeach
                                             @endif
                                             @if ($buying_productii)
-                                                @foreach ($buying_product as $product)
+                                                @foreach ($buying_productii as $product)
                                                     <div class="btn btn-warning btn-xs">{{$product}}</div>
                                                 @endforeach
                                             @endif
@@ -167,7 +167,7 @@
                                                 @endforeach
                                             @endif
                                             @if ($selling_productii)
-                                                @foreach ($selling_product as $product)
+                                                @foreach ($selling_productii as $product)
                                                     <div class="btn btn-warning btn-xs">{{$product}}</div>
                                                 @endforeach
                                             @endif
