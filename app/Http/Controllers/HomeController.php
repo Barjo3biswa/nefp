@@ -26,27 +26,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-
         if(Auth::check()){
             $user_info = User::where('id',Auth::User()->id)->first();
             $buying_intersest_row = json_decode($user_info->buy_raw_materials);
             $selling_interest_row = json_decode($user_info->sell_raw_materials);
-
             $buying_intersest_processed = json_decode($user_info->buy_processed);
             $selling_interest_processed = json_decode($user_info->sell_processed);
 
             $matchedi = [];
             $matchedii = [];
+
             if($buying_intersest_row){
                 $buying_matched = User::where(function($query) use ($buying_intersest_row) {
                     foreach ($buying_intersest_row as $interest) {
                         $query->orWhere('sell_raw_materials', 'like', '%' . $interest . '%');
                     }
                 })->where('id','!=',$user_info->id)->get();
-            }
-
-            if($selling_interest_row){
+            }if($selling_interest_row){
                 $selling_matched = User::where(function($query) use ($selling_interest_row) {
                     foreach ($selling_interest_row as $interest) {
                         $query->orWhere('buy_raw_materials', 'like', '%' . $interest . '%');
@@ -60,9 +56,7 @@ class HomeController extends Controller
                         $query->orWhere('sell_processed', 'like', '%' . $interest . '%');
                     }
                 })->where('id','!=',$user_info->id)->get();
-            }
-
-            if($selling_interest_processed){
+            }if($selling_interest_processed){
                 $selling_matched_processed = User::where(function($query) use ($selling_interest_processed) {
                     foreach ($selling_interest_processed as $interest) {
                         $query->orWhere('buy_processed', 'like', '%' . $interest . '%');
@@ -70,6 +64,26 @@ class HomeController extends Controller
                 })->where('id','!=',$user_info->id)->get();
             }
 
+            //buy_services_checkbox //buy_machinery_checkbox //buy_packaging_checkbox
+            $mathchediii = User::where('id',1)->get();
+            if($user_info->buy_services_checkbox){
+               $mathchediii = $mathchediii->merge(User::where('sell_services_checkbox','yes')->where('id','!=',$user_info->id)->get());
+            }if($user_info->buy_machinery_checkbox){
+               $mathchediii = $mathchediii->merge(User::where('sell_machinery_checkbox','yes')->where('id','!=',$user_info->id)->get());
+            }if($user_info->buy_packaging_checkbox){
+                $mathchediii = $mathchediii->merge(User::where('sell_packaging_checkbox','yes')->where('id','!=',$user_info->id)->get());
+            }
+
+            $mathchediv = User::where('id',1)->get();
+            if($user_info->sell_services_checkbox){
+               $mathchediv = $mathchediv->merge(User::where('buy_services_checkbox','yes')->where('id','!=',$user_info->id)->get());
+            }if($user_info->sell_machinery_checkbox){
+               $mathchediv = $mathchediv->merge(User::where('buy_machinery_checkbox','yes')->where('id','!=',$user_info->id)->get());
+            }if($user_info->sell_packaging_checkbox){
+                $mathchediv = $mathchediv->merge(User::where('buy_packaging_checkbox','yes')->where('id','!=',$user_info->id)->get());
+            }
+
+            $matchediii = $mathchediii->merge($mathchediv);
 
             if($buying_intersest_row && $selling_interest_row){
                 $matchedi = $buying_matched->merge($selling_matched);
@@ -87,7 +101,10 @@ class HomeController extends Controller
                 $matchedii = $selling_matched_processed;
             }
 
+
+
             $matched = $matchedi->merge($matchedii);
+            $matched = $matched->merge($matchediii);
         }else{
             $matched = User::where('btob_meeting','yes')->get();
         }
