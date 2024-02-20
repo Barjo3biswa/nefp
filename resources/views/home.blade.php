@@ -109,7 +109,7 @@
                             </h1>
                         </div> --}}
                         <div class="row">
-                            <div class="form-group">
+                            <div class="form-group col-md-6" style="margin:auto;">
                                 <input type="text" id="Search" class="form-control" onkeyup="myFunction()" placeholder="Type here to search" title="Type in a name">
                             </div>
                         </div>
