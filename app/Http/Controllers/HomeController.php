@@ -30,33 +30,64 @@ class HomeController extends Controller
 
         if(Auth::check()){
             $user_info = User::where('id',Auth::User()->id)->first();
-            $buying_intersest = json_decode($user_info->buy_raw_materials);
-            $selling_interest = json_decode($user_info->sell_raw_materials);
+            $buying_intersest_row = json_decode($user_info->buy_raw_materials);
+            $selling_interest_row = json_decode($user_info->sell_raw_materials);
 
-            $matched = [];
-            if($buying_intersest){
-                $buying_matched = User::where(function($query) use ($buying_intersest) {
-                    foreach ($buying_intersest as $interest) {
+            $buying_intersest_processed = json_decode($user_info->buy_processed);
+            $selling_interest_processed = json_decode($user_info->sell_processed);
+
+            $matchedi = [];
+            $matchedii = [];
+            if($buying_intersest_row){
+                $buying_matched = User::where(function($query) use ($buying_intersest_row) {
+                    foreach ($buying_intersest_row as $interest) {
                         $query->orWhere('sell_raw_materials', 'like', '%' . $interest . '%');
                     }
                 })->where('id','!=',$user_info->id)->get();
             }
 
-            if($selling_interest){
-                $selling_matched = User::where(function($query) use ($selling_interest) {
-                    foreach ($selling_interest as $interest) {
+            if($selling_interest_row){
+                $selling_matched = User::where(function($query) use ($selling_interest_row) {
+                    foreach ($selling_interest_row as $interest) {
                         $query->orWhere('buy_raw_materials', 'like', '%' . $interest . '%');
                     }
                 })->where('id','!=',$user_info->id)->get();
             }
 
-            if($buying_intersest && $selling_interest){
-                $matched = $buying_matched->merge($selling_matched);
-            }else if($buying_intersest && !$selling_interest){
-                $matched = $buying_matched;
-            }else if(!$buying_intersest && $selling_interest){
-                $matched = $selling_matched;
+            if($buying_intersest_processed){
+                $buying_matched_processed = User::where(function($query) use ($buying_intersest_processed) {
+                    foreach ($buying_intersest_processed as $interest) {
+                        $query->orWhere('sell_processed', 'like', '%' . $interest . '%');
+                    }
+                })->where('id','!=',$user_info->id)->get();
             }
+
+            if($selling_interest_processed){
+                $selling_matched_processed = User::where(function($query) use ($selling_interest_processed) {
+                    foreach ($selling_interest_processed as $interest) {
+                        $query->orWhere('buy_processed', 'like', '%' . $interest . '%');
+                    }
+                })->where('id','!=',$user_info->id)->get();
+            }
+
+
+            if($buying_intersest_row && $selling_interest_row){
+                $matchedi = $buying_matched->merge($selling_matched);
+            }else if($buying_intersest_row && !$selling_interest_row){
+                $matchedi = $buying_matched;
+            }else if(!$buying_intersest_row && $selling_interest_row){
+                $matchedi = $selling_matched;
+            }
+
+            if($buying_intersest_processed && $selling_interest_processed){
+                $matchedii = $buying_matched_processed->merge($selling_matched_processed);
+            }else if($buying_intersest_processed && !$selling_interest_processed){
+                $matchedii = $buying_matched_processed;
+            }else if(!$buying_intersest_processed && $selling_interest_processed){
+                $matchedii = $selling_matched_processed;
+            }
+
+            $matched = $matchedi->merge($matchedii);
         }else{
             $matched = User::where('btob_meeting','yes')->get();
         }

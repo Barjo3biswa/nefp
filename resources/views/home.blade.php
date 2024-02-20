@@ -125,8 +125,14 @@
                                         <div class="key-areas-div">
                                             @php
                                                 $buying_product = json_decode($mat->buy_raw_materials);
+                                                $buying_productii = json_decode($mat->buy_processed);
                                             @endphp
                                             @if ($buying_product)
+                                                @foreach ($buying_product as $product)
+                                                    <div class="btn btn-warning btn-xs">{{$product}}</div>
+                                                @endforeach
+                                            @endif
+                                            @if ($buying_productii)
                                                 @foreach ($buying_product as $product)
                                                     <div class="btn btn-warning btn-xs">{{$product}}</div>
                                                 @endforeach
@@ -153,8 +159,14 @@
                                         <div class="key-areas-div">
                                             @php
                                                 $selling_product = json_decode($mat->sell_raw_materials);
+                                                $selling_productii = json_decode($mat->sell_processed);
                                             @endphp
                                             @if ($selling_product)
+                                                @foreach ($selling_product as $product)
+                                                    <div class="btn btn-warning btn-xs">{{$product}}</div>
+                                                @endforeach
+                                            @endif
+                                            @if ($selling_productii)
                                                 @foreach ($selling_product as $product)
                                                     <div class="btn btn-warning btn-xs">{{$product}}</div>
                                                 @endforeach
