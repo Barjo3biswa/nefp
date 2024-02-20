@@ -81,6 +81,10 @@
             line-height: .5;
             border-radius: .2rem;
         }
+        .b2b-btn{
+            background: var(--color-primary);
+        }
+
 
         .heart-icon {
 
@@ -187,18 +191,29 @@
                                         </div>
                                     </div>
 
-                                    <div class="row" style="display: flex; text-align: right;">
-                                        @if(Auth::check())
-                                        <div onclick="callAjax({{$mat->id}})" id="heart_section{{$mat->id}}">
-                                            @if(testHelper($mat->id)==true)
-                                                <i class="fas fa-heart" style="color: #f43d3d; margin-left: auto;" aria-hidden="true"></i>
-                                            @else
-                                                <i class="fa-regular fa-heart"></i>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            @if($mat->btob_meeting=='yes')
+                                               <div class="btn btn-success btn-xs b2b-btn">B 2 B</div>
+                                            @endif
+                                            @if($mat->btog_meeting=='yes')
+                                                <div class="btn btn-success btn-xs b2b-btn">B 2 G</div>
                                             @endif
                                         </div>
-                                        @else
-                                            <a href="{{route('login')}}"><i class="fa-regular fa-heart"></i></a>
-                                        @endif
+                                        <div class="col-md-6" style="display: flex; justify-content: flex-end">
+                                            @if(Auth::check())
+                                            <div onclick="callAjax({{$mat->id}})" id="heart_section{{$mat->id}}">
+                                                @if(testHelper($mat->id)==true)
+                                                    <i class="fas fa-heart" style="color: #f43d3d; margin-left: auto;" aria-hidden="true"></i>
+                                                @else
+                                                    <i class="fa-regular fa-heart"></i>
+                                                @endif
+                                            </div>
+                                            @else
+                                                <a href="{{route('login')}}"><i class="fa-regular fa-heart"></i></a>
+                                            @endif
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
