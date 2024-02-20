@@ -26,13 +26,19 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/print-pass', 'HomeController@printPass')->name('print-pass');
+Route::get('/business-match', 'HomeController@index')->name('business-match');
+Route::get('/make-favourite', 'HomeController@makeFav')->name('make-favourite');
 
 Route::get('/admin',[LoginController::class,'showAdminLoginForm'])->name('admin.login-view');
 Route::post('/admin',[LoginController::class,'adminLogin'])->name('admin.login');
 
 
+
 Route::get('/dashboard', 'AdminController@index')->name('dashboard')->middleware('auth:admin');
 Route::get('/application/{id}', 'AdminController@application')->name('application')->middleware('auth:admin');
 Route::get('/view-indiv/{id}', 'AdminController@viewIndv')->name('view-indiv')->middleware('auth:admin');
+
+Route::get('/matching-admin', 'AdminController@matchingAdmin')->name('matching-admin')->middleware('auth:admin');
 
 

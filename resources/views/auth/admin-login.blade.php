@@ -14,6 +14,16 @@
             font-size: .9em;
             font-family: "Arial", sans-serif !important;
         }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+        footer {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
     </style>
 @endsection
 @section('content')

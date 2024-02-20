@@ -287,13 +287,16 @@
                                         <a href="{{route('login')}}">Log in</a>
                                     </li>
                                     <li class="dropdown">
+                                        <a href="{{route('business-match')}}">Business Match</a>
+                                    </li>
+                                    <li class="dropdown">
                                         <a href="javascript:void(0)">Exhibitor Profile</a>
                                     </li>
                                     <li class="dropdown">
                                         <a href="javascript:void(0)">B2B/B2G Profile</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="javascript:void(0)">Print Pass</a>
+                                        <a href="{{route('print-pass')}}">Print Pass</a>
                                     </li>
                                 </ul>
                             </li>

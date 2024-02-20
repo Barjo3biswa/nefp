@@ -1,136 +1,100 @@
 @extends('layouts.front-app')
 @section('css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <style>
-        /* @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700); */
-
-
-
-        ul {
-            list-style: none;
+        th,
+        td {
+            white-space: pre-wrap !important;
         }
 
-        img {
-            -ms-interpolation-mode: bicubic;
-            vertical-align: middle;
-            border: 0;
+        @media print {
+            .noPrint {
+                display: none;
+            }
         }
 
-        .profile-card {
-            width: 300px;
-            height:350px;
-            border-radius: 2px;
-            overflow: hidden;
-            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-            /* position: relative; */
-            /* margin: auto; */
-            background: rgba(255, 255, 255, 1);
-            top: 50%;
-            /* transform: translateY(-50%); */
-        }
-
-        .profile-card header {
-            display: block;
-            /* position: relative; */
-            background: rgba(255, 255, 255, 1);
-            text-align: center;
-            padding: 30px 0 20px;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .profile-card header:before {
-            content: "";
-            /* position: absolute; */
-            background: url('http://ali.shahab.pk/blur.php?img=http://ali.shahab.pk/ali-shahab.jpg&x=60') no-repeat;
-            background-size: cover;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            z-index: -1;
-
-        }
-
-        .profile-card header:after {
-            content: "";
-            /* position: absolute; */
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-image: linear-gradient(to bottom,
-                    rgba(255, 255, 255, 0) 0%,
-                    rgba(255, 255, 255, 1) 100%);
-        }
-
-        .profile-card header img {
-            /* border-radius: 100%; */
-            overflow: hidden;
-            width: 150px;
-            /*border: 1px solid rgba(255,255,255,.5);*/
-            /* box-shadow: 0 1px 0 rgba(0, 0, 0, .1), 0 1px 2px rgba(0, 0, 0, .1); */
-        }
-
-        .profile-card header h1 {
-            font-weight: 400;
-            font-size: 30px;
-            color: #444;
-            letter-spacing: 1px;
+        <style>body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
         }
 
-        .profile-card header h2 {
-            font-weight: 400;
-            font-size: 14px;
-            color: #666;
-            letter-spacing: .5px;
-            margin: 0;
-            padding: 0;
+        .profile-container {
+            /* max-width: 800px;
+            margin: 0 auto; */
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
         }
 
-        .profile-card .profile-bio {
-            padding: 0 30px;
+        .header {
             text-align: center;
-            color: #888;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 0;
+            background-color: #1a4133;
+            color: #fff;
+            border-radius: 4px;
+        }
+        .product-box{
+            text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            /* border: 1px solid #ccc; */
         }
 
-        .profile-card .profile-social-links {
-            display: table;
-            width: 70%;
-            margin: 20px auto;
+        .card {
+            border: 1px solid rgb(197 197 197 / 13%);
+            border-radius: 0.25rem;
+            margin-bottom: 4rem;
         }
 
-        .profile-card .profile-social-links li {
-            display: table-cell;
-            width: 33.3333333333333333%
+        .key-areas-div {
+            /* min-height: 102px; */
+            min-height: 70px;
+            /* max-height: 110px; */
+            overflow: hidden;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
-        .profile-card .profile-social-links li a {
-            display: block;
-            text-align: center;
-            padding: 10px;
-            margin: 0 10px;
-            border-radius: 100%;
-            -webkit-transition: box-shadow 0.2s;
-            -moz-transition: box-shadow 0.2s;
-            -o-transition: box-shadow 0.2s;
-            transition: box-shadow 0.2s;
+        .products {
+            text-align: left;
+            font-size: 18px;
         }
 
-        .profile-card .profile-social-links li a:hover {
-            box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, .12), 0 1px 1px 0 rgba(0, 0, 0, .24);
+        .sector {
+            text-align: left;
+            font-size: 18px;
+            margin-top: 6px;
         }
 
-        .profile-card .profile-social-links li a:active {
-            box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+        .btn-group-xs>.btn,
+        .btn-xs {
+            padding: .25rem .4rem;
+            font-size: .875rem;
+            line-height: .5;
+            border-radius: .2rem;
         }
 
-        .profile-card .profile-social-links li a img {
-            width: 100%;
-            display: block;
+        .heart-icon {
+
+            padding: 5px; /* Adjust padding to control the space between the heart and the border */
         }
+
+
+
+
+
+
+
+
+
     </style>
 @endsection
 @section('content')
@@ -138,32 +102,136 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    {{-- <div class="card-header">{{ __('Dashboard') }}</div> --}}
-
                     <div class="card-body">
-                        <div class="alert alert-success" role="alert">
+                        {{-- <div class="alert alert-success" role="alert">
                             <h1>Welcome to your login page. Your business match will appear here.
                                 Your email id is your username.
                             </h1>
-                        </div>
-                        {{-- <div>
-                            <aside class="profile-card">
-                                <header>
-                                    <a href="http://ali.shahab.pk">
-                                        <img src="assets/logo/nefo_logo.png" alt="">
-                                    </a>
-                                    <h1>NE Food Pro 2024</h1>
-                                    <h2>B2B Meeting</h2>
-                                </header>
-                                <div class="profile-bio">
-                                    <h3>Biswajit Laskar</h3>
-                                    <h3>B2B-1234</h3>
-                                </div>
-                            </aside>
                         </div> --}}
+                        <div class="row">
+                            <div class="form-group">
+                                <input type="text" id="Search" class="form-control" onkeyup="myFunction()" placeholder="Type here to search" title="Type in a name">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            @foreach ($matched as $mat)
+                            <div class="col-md-4 mt-2 target">
+                                <div class="profile-container">
+                                    <div class="header">{{$mat->organization}}</div>
+                                    <div class="sector">{{$mat->State->name}}, {{$mat->pin_code}}</div>
+                                    <div class="product-box">
+                                        <div class="products">Buying Interests</div>
+                                        <div class="key-areas-div">
+                                            @php
+                                                $buying_product = json_decode($mat->buy_raw_materials);
+                                            @endphp
+                                            @if ($buying_product)
+                                                @foreach ($buying_product as $product)
+                                                    <div class="btn btn-warning btn-xs">{{$product}}</div>
+                                                @endforeach
+                                            @endif
+                                            @if ($mat->buy_other_raw_materials)
+                                                <div class="btn btn-warning btn-xs">{{$mat->buy_other_raw_materials}}</div>
+                                            @endif
+                                            @if ($mat->buy_services_checkbox)
+                                                <div class="btn btn-warning btn-xs">Service</div>
+                                            @endif
+                                            @if ($mat->buy_machinery_checkbox)
+                                                <div class="btn btn-warning btn-xs">Machinery</div>
+                                            @endif
+                                            @if ($mat->buy_packaging_checkbox)
+                                                <div class="btn btn-warning btn-xs">Packeging</div>
+                                            @endif
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="product-box">
+                                        <div class="products">Selling Interests</div>
+                                        <div class="key-areas-div">
+                                            @php
+                                                $selling_product = json_decode($mat->sell_raw_materials);
+                                            @endphp
+                                            @if ($selling_product)
+                                                @foreach ($selling_product as $product)
+                                                    <div class="btn btn-warning btn-xs">{{$product}}</div>
+                                                @endforeach
+                                            @endif
+                                            @if ($mat->sell_other_raw_materials)
+                                                <div class="btn btn-warning btn-xs">{{$mat->sell_other_raw_materials}}</div>
+                                            @endif
+                                            @if ($mat->sell_services_checkbox)
+                                                <div class="btn btn-warning btn-xs">Service</div>
+                                            @endif
+                                            @if ($mat->sell_machinery_checkbox)
+                                                <div class="btn btn-warning btn-xs">Machinery</div>
+                                            @endif
+                                            @if ($mat->sell_packaging_checkbox)
+                                                <div class="btn btn-warning btn-xs">Packeging</div>
+                                            @endif
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row" style="display: flex; text-align: right;">
+                                        @if(Auth::check())
+                                        <div onclick="callAjax({{$mat->id}})" id="heart_section{{$mat->id}}">
+                                            @if(testHelper($mat->id)==true)
+                                                <i class="fas fa-heart" style="color: #f43d3d; margin-left: auto;" aria-hidden="true"></i>
+                                            @else
+                                                <i class="fa-regular fa-heart"></i>
+                                            @endif
+                                        </div>
+                                        @else
+                                            <a href="{{route('login')}}"><i class="fa-regular fa-heart"></i></a>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+<script>
+
+    function callAjax(id){
+        // alert(id);
+        $.ajax({
+            url : "{{route('make-favourite')}}",
+            data : {'id' : id},
+            type : 'GET',
+            success:function(success){
+                    console.log(success.data);
+                    $("#heart_section"+id).empty();
+                    if(success.data == 'Active'){
+                        $("#heart_section"+id).append(`<i class="fas fa-heart" style="color: #f43d3d; margin-left: auto;" aria-hidden="true"></i>`);
+                    }else if(success.data == 'Deactive'){
+                        $("#heart_section"+id).append(`<i class="fa-regular fa-heart"></i>`);
+                    }
+                },
+        });
+    }
+
+    function myFunction() {
+        var input = document.getElementById("Search");
+        var filter = input.value.toLowerCase();
+        var nodes = document.getElementsByClassName('target');
+
+        for (i = 0; i < nodes.length; i++) {
+            if (nodes[i].innerText.toLowerCase().includes(filter)) {
+            nodes[i].style.display = "block";
+            } else {
+            nodes[i].style.display = "none";
+            }
+        }
+    }
+
+</script>
 @endsection

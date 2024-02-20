@@ -1,6 +1,16 @@
 @extends('layouts.front-app')
 @section('css')
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+        footer {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
         .select2-container {
             width: 100% !important;
         }

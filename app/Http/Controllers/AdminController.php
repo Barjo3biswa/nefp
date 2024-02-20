@@ -47,4 +47,8 @@ class AdminController extends Controller
         return view("admin.show", compact('decrypted','application'));
         // dd($application);
     }
+
+    public function matchingAdmin(){
+        return view("admin.business-match");
+    }
 }
