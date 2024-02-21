@@ -109,8 +109,8 @@ class HomeController extends Controller
             $matched = User::where('btob_meeting','yes')->get();
         }
 
-
-        if (!empty((array) $matched)) {
+        // dd($matched->count());
+        if ($matched->count()!=0) {
             return view('home', compact('matched'));
         } else {
             return view('print-pass', compact('user_info'));
