@@ -110,7 +110,7 @@ class HomeController extends Controller
         }
 
 
-        if(isset($matched)){
+        if(!empty($matched)){
             return view('home', compact('matched'));
         }else{
             return view('print-pass', compact('user_info'));
