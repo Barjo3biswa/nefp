@@ -248,7 +248,7 @@
                         <p>&copy; Copyright 2024. All Rights Reserved by <a href="#">Web.com(India) Pvt. Ltd.</a>
                         </p>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" style="text-align: right;">
                         <a href="https://nefoodpro.com/registration/public/admin">Admin Login</a>
                     </div>
                 </div>
