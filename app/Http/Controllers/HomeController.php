@@ -33,8 +33,8 @@ class HomeController extends Controller
             $buying_intersest_processed = json_decode($user_info->buy_processed);
             $selling_interest_processed = json_decode($user_info->sell_processed);
 
-            $matchedi = [];
-            $matchedii = [];
+            $matchedi = User::where('id',1)->get();
+            $matchedii = User::where('id',1)->get();
 
             if($buying_intersest_row){
                 $buying_matched = User::where(function($query) use ($buying_intersest_row) {
