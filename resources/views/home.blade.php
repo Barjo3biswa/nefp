@@ -91,7 +91,9 @@
             padding: 5px; /* Adjust padding to control the space between the heart and the border */
         }
 
-
+        a{
+            color: #fff;
+        }
 
 
 
@@ -122,7 +124,7 @@
                             @foreach ($matched as $mat)
                             <div class="col-md-4 mt-2 target">
                                 <div class="profile-container">
-                                    <div class="header">{{$mat->organization}}</div>
+                                    <a href="{{route('view-profile',Crypt::encrypt($mat->id))}}"><div class="header">{{$mat->organization}}</div></a>
                                     <div class="sector">{{$mat->State->name}}, {{$mat->pin_code}}</div>
                                     <div class="product-box">
                                         <div class="products">Buying Interests</div>
