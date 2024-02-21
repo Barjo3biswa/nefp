@@ -20,6 +20,9 @@
             box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
             background: rgba(255, 255, 255, 1);
             top: 50%;
+            display: flex;
+    flex-direction: column;
+    justify-content: center;
         }
 
         .profile-card header {
@@ -71,11 +74,12 @@
 
         .profile-card header h2 {
             font-weight: 400;
-            font-size: 14px;
-            color: #666;
+            font-size: 18px;
             letter-spacing: .5px;
             margin: 0;
             padding: 0;
+            color: #ed691f;
+            font-weight:600;
         }
 
         .profile-card .profile-bio {
@@ -129,6 +133,16 @@
         }
 
 
+        @media print {
+            .no-print{
+                display: none!important;
+            }
+        }
+        footer {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
     </style>
 @endsection
 @section('content')
@@ -137,17 +151,19 @@
             <div class="col-md-12">
                 <div class="card">
                     {{-- <div class="card-header">{{ __('Dashboard') }}</div> --}}
-
+                    {{-- <div class="alert alert-success" role="alert">
+                        <h1>Business not matched. </h1>
+                    </div> --}}
                     <div class="card-body">
-                        <div class="row">
+                        <div class="row align-center justify-content-center">
                             @php
                                 $application_suffix =str_pad($user_info->id, 5, '0', STR_PAD_LEFT);
                             @endphp
-                            @if ($user_info->Exhibition=='yes')
-                            <div class="col-md-3" style="text-align: center;">
-                                <aside class="profile-card" id="printableArea">
+                            @if ($user_info->Exhibition=='yes' && $user_info->exi_status=='accepted')
+                            <div class="col-md-3" style="text-align: center;" id="printableArea">
+                                <aside class="profile-card">
                                     <header>
-                                        <a href="http://ali.shahab.pk">
+                                        <a href="#">
                                             <img src="assets/logo/nefo_logo.png" alt="">
                                         </a>
                                         <h1>NE Food Pro 2024</h1>
@@ -159,11 +175,11 @@
                                     </div>
                                 </aside>
                                 </br>
-                                {{-- <button class="btn btn-primary btn-xs" onclick="printDiv('printableArea')">Download</button> --}}
+                                <button class="btn btn-primary btn-xs no-print" onclick="printDiv('printableArea')">Download</button>
                             </div>
                             @endif
                             @if ($user_info->btob_meeting=='yes')
-                            <div class="col-md-3" style="text-align: center;">
+                            <div class="col-md-3" style="text-align: center;" id="printableAreai">
                                 <aside class="profile-card">
                                     <header>
                                         <a href="http://ali.shahab.pk">
@@ -178,11 +194,11 @@
                                     </div>
                                 </aside>
                                 </br>
-                                {{-- <button class="btn btn-primary btn-xs">Download</button> --}}
+                                <button class="btn btn-primary btn-xs no-print" onclick="printDiv('printableAreai')">Download</button>
                             </div>
                             @endif
                             @if ($user_info->btog_meeting=='yes')
-                            <div class="col-md-3" style="text-align: center;">
+                            <div class="col-md-3" style="text-align: center;" id="printableAreaii">
                                 <aside class="profile-card">
                                     <header>
                                         <a href="http://ali.shahab.pk">
@@ -197,11 +213,11 @@
                                     </div>
                                 </aside>
                                 </br>
-                                {{-- <button class="btn btn-primary btn-xs">Download</button> --}}
+                                <button class="btn btn-primary btn-xs no-print" onclick="printDiv('printableAreaii')">Download</button>
                             </div>
                             @endif
                             @if ($user_info->general=='yes')
-                            <div class="col-md-3" style="text-align: center;">
+                            <div class="col-md-3" style="text-align: center;" id="printableAreaiii">
                                 <aside class="profile-card">
                                     <header>
                                         <a href="http://ali.shahab.pk">
@@ -216,7 +232,7 @@
                                     </div>
                                 </aside>
                                 </br>
-                                {{-- <button class="btn btn-primary btn-xs">Download</button> --}}
+                                <button class="btn btn-primary btn-xs no-print" onclick="printDiv('printableAreaiii')">Download</button>
                             </div>
                             @endif
 

@@ -29,6 +29,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/print-pass', 'HomeController@printPass')->name('print-pass');
 Route::get('/business-match', 'HomeController@index')->name('business-match');
 Route::get('/make-favourite', 'HomeController@makeFav')->name('make-favourite');
+Route::get('/btob-btog-profile', 'HomeController@BtoBProfile')->name('btob-btog-profile');
+Route::get('/exibitor-profile', 'HomeController@ExiProfile')->name('exibitor-profile');
+Route::get('/view-profile/{id}', 'HomeController@ViewProfile')->name('view-profile');
+
 
 Route::get('/admin',[LoginController::class,'showAdminLoginForm'])->name('admin.login-view');
 Route::post('/admin',[LoginController::class,'adminLogin'])->name('admin.login');

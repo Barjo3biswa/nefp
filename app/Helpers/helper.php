@@ -13,3 +13,11 @@ function testHelper($fav_to){
 
 }
 
+function getGuardName(){
+    $guard = auth()->guard();
+    $fullName = $guard->getName(); // Full name, e.g., "login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d"
+    $nameParts = explode('_', $fullName);
+    $guardType = $nameParts[1];
+    return $guardType;
+}
+

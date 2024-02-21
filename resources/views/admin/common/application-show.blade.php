@@ -1,4 +1,4 @@
-<div class="row" id="printableArea">
+<div id="printableArea">
     <table class="table table-bordered">
             <tr>
                 <th style="text-align: center; white-space: nowrap !important;" >
@@ -11,11 +11,11 @@
             <th>Name</th>
             <td>{{$application->first_name.' '.$application->mioddle_name.' '.$application->last_name}}</td>
             <th>Email</th>
-            <td >{{$application->email}}</td>
+            <td >{{getGuardName()=='admin'?$application->email : "**********@gmail.com"}}</td>
         </tr>
         <tr>
             <th>Mobile No</th>
-            <td >{{$application->mobile_no}}</td>
+            <td >{{getGuardName()=='admin'?$application->mobile_no : "**********"}}</td>
             <th>Organization</th>
             <td>{{$application->organization}}</td>
         </tr>
@@ -82,10 +82,10 @@
     <label for=""><strong><u><h3>For B2B Meetings:</h3></u></strong></label>
     <table class="table table-bordered">
         <tr>
-            <th>Buying Interest</th>
-            <td><input type="checkbox" id="first" name="first" {{$application->buying=='yes'?'checked':''}} disabled="disabled"></td>
-            <th>Selling Interest</th>
-            <td><input type="checkbox" id="first" name="first" {{$application->selling=='yes'?'checked':''}} disabled="disabled"></td>
+            <th width="20%">Buying Interest</th>
+            <td width="30%"><input type="checkbox" id="first" name="first" {{$application->buying=='yes'?'checked':''}} disabled="disabled"></td>
+            <th width="20%">Selling Interest</th>
+            <td width="30%"><input type="checkbox" id="first" name="first" {{$application->selling=='yes'?'checked':''}} disabled="disabled"></td>
         </tr>
         <tr>
             @php
@@ -172,21 +172,18 @@
         </tr>
     </table>
     @endif
-
-
-
-
+    <div>
     <table class="table table-bordered">
         <tr>
             <td><input type="checkbox" id="first" name="first" {{$application->first=='yes'?'checked':''}} disabled="disabled"></td>
             <th>Technical Seminars: Enhancing food processing sector through value chain interventions of major agri-horti commodities of NE India</th>
         </tr>
         <tr>
-            <td><input type="checkbox" id="first" name="first" {{$application->first=='yes'?'checked':''}} disabled="disabled"></td>
+            <td><input type="checkbox" id="second" name="second" {{$application->second=='yes'?'checked':''}} disabled="disabled"></td>
             <th>Technical Seminars: Enabling Environment of MSME development and avenues for enhancing exports from NE region to South East Asian Market</th>
         </tr>
         <tr>
-            <td><input type="checkbox" id="first" name="first" {{$application->first=='yes'?'checked':''}} disabled="disabled"></td>
+            <td><input type="checkbox" id="third" name="third" {{$application->third=='yes'?'checked':''}} disabled="disabled"></td>
             <th>Start-up Interaction: Food Start Up- Entrepreneurial journeys of NE Soil</th>
         </tr>
         @if ($application->product_img)
@@ -195,4 +192,5 @@
         </tr>
         @endif
     </table>
+</div>
 </div>

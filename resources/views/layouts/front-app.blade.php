@@ -7,25 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>NE Food PRO 2024 | Northeast India</title>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/themify-icons.css" rel="stylesheet">
-    <link href="assets/css/elegant-icons.css" rel="stylesheet">
-    <link href="assets/css/flaticon-set.css" rel="stylesheet">
-    <link href="assets/css/magnific-popup.css" rel="stylesheet">
-    <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
-    <link href="assets/css/animate.css" rel="stylesheet">
-    <link href="assets/css/validnavs.css" rel="stylesheet">
-    <link href="assets/css/helper.css" rel="stylesheet">
-    <link href="assets/css/shop.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/unit-test.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="{{asset('/')}}assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('/')}}assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{asset('/')}}assets/css/themify-icons.css" rel="stylesheet">
+    <link href="{{asset('/')}}assets/css/elegant-icons.css" rel="stylesheet">
+    <link href="{{asset('/')}}assets/css/flaticon-set.css" rel="stylesheet">
+    <link href="{{asset('/')}}assets/css/magnific-popup.css" rel="stylesheet">
+    <link href="{{asset('/')}}assets/css/swiper-bundle.min.css" rel="stylesheet">
+    <link href="{{asset('/')}}assets/css/animate.css" rel="stylesheet">
+    <link href="{{asset('/')}}assets/css/validnavs.css" rel="stylesheet">
+    <link href="{{asset('/')}}assets/css/helper.css" rel="stylesheet">
+    <link href="{{asset('/')}}assets/css/shop.css" rel="stylesheet">
+    <link href="{{asset('/')}}assets/css/style.css" rel="stylesheet">
+    <link href="{{asset('/')}}assets/css/unit-test.css" rel="stylesheet">
+    <link href="{{asset('/')}}style.css" rel="stylesheet">
     @yield('css')
 </head>
 
 <body>
-    <div class="se-pre-con"></div>
+    {{-- <div class="se-pre-con"></div>
     <div class="top-bar-area text-light" style="display: none;">
         <div class="container">
             <div class="row1 flex-div-top align-center">
@@ -49,7 +49,7 @@
                     <div class="social">
                         <ul style="display: flex;align-items: center;">
                             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href=""><img src="assets/icons/twitter.png" alt="" width="12"></a>
+                            <li><a href=""><img src="{{asset('/')}}assets/icons/twitter.png" alt="" width="12"></a>
                             </li>
                             <li><a href="#" style="padding-left: 7px;"><i class="fab fa-instagram"
                                         style="color:red;"></i></a></li>
@@ -58,7 +58,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <header>
         <nav class="navbar mobile-sidenav inc-shape navbar-common navbar-sticky navbar-default validnavs">
             <div class="top-search">
@@ -76,130 +76,17 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="https://nefoodpro.com/">
-                        <img src="assets/logo/nefo_logo.png" alt="">
+                        <img src="{{asset('/')}}assets/logo/nefo_logo.png" alt="">
                     </a>
                 </div>
                 <div class="main-nav-content">
                     <div class="collapse navbar-collapse" id="navbar-menu">
-                        <img src="assets/logo/nefo_logo.png" alt="Logo"></a>
+                        <img src="{{asset('/')}}assets/logo/nefo_logo.png" alt="Logo"></a>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i class="fa fa-times"></i>
                         </button>
 
-                        {{-- <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About NE Food
-                                    Pro</a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle"
-                                            data-toggle="dropdown">NE Food
-                                            Pro 2024</a>
-                                        <ul>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="https://nefoodpro.com/about-us.html">About Us</a></li>
-                                                <li><a href="javascript:void(0)">Brochurs</a></li>
-                                                <li><a href="https://nefoodpro.com/key_elements.html">Key Elements</a></li>
-                                            </ul>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#" class="dropdown-toggle"
-                                            data-toggle="dropdown">NE Food
-                                            Fest 2023</a>
-                                        <ul>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="pdf/food_fest-2023/ne_food-fest-report_2023.pdf"
-                                                        target="_blank">Reports</a></li>
-                                                <li><a href="pdf/food_fest-2023/exhibitor_list.pdf"
-                                                        target="_blank">Exhibitors list</a></li>
-                                                <li><a href="pdf/food_fest-2023/technical_seminar.pdf"
-                                                        target="_blank">Technical Seminars</a></li>
-                                                <li><a href="javascript:void(0)">Photo Gallery</a></li>
-                                            </ul>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Why Visit NE Food
-                                    Pro</a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown">
-                                        <a href="https://nefoodpro.com/why_visit.html">Why Visit</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="https://nefoodpro.com/who_attend.html">Who should Attend</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)">How to Reach</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="https://nefoodpro.com/hotels.html">Hotels & Accomodations</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Invest in Assam</a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)">Introducing Assam</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)">Connectivity</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)">Industrial Infrastructure</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)">Policies & Regulatory Act</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)">Focus on Agrihorti Sectors</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)">Major Investors in Food Processing</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Register</a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown">
-                                        <a href="{{route('register')}}">Resgistration</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="{{route('login')}}">Log in</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)">Exhibitor Profile</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)">Print Pass</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Media & Gallery</a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)">NE Photo Gallery</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)">Press</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)">Radio Jingle</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)">IEC</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)">Video Gallery</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="javascript:void(0)">Contact Us</a>
-                            </li> --}}
+
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">About NE Food Pro</a>
@@ -290,10 +177,10 @@
                                         <a href="{{route('business-match')}}">Business Match</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="javascript:void(0)">Exhibitor Profile</a>
+                                        <a href="{{route('exibitor-profile')}}">Exhibitor Profile</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="javascript:void(0)">B2B/B2G Profile</a>
+                                        <a href="{{route('btob-btog-profile')}}">B2B/B2G Profile</a>
                                     </li>
                                     <li class="dropdown">
                                         <a href="{{route('print-pass')}}">Print Pass</a>
@@ -353,7 +240,7 @@
     </header>
 
     @yield('content')
-    <footer class="bg-dark text-light" style="background-image: url(assets/img/shape/brush-down.png);">
+    <footer class="bg-dark text-light">
         <div class="container">
             <div class="footer-bottom">
                 <div class="row">
@@ -365,29 +252,29 @@
             </div>
         </div>
         <div class="shape-right-bottom">
-            <img src="assets/img/shape/10.png" alt="Image Not Found">
+            <img src="{{asset('/')}}assets/img/shape/10.png" alt="Image Not Found">
         </div>
     </footer>
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/jquery.appear.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/modernizr.custom.13711.js"></script>
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/progress-bar.min.js"></script>
-    <script src="assets/js/circle-progress.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/count-to.js"></script>
-    <script src="assets/js/jquery.scrolla.min.js"></script>
-    <script src="assets/js/YTPlayer.min.js"></script>
-    <script src="assets/js/TweenMax.min.js"></script>
-    <script src="assets/js/loopcounter.js"></script>
-    <script src="assets/js/validnavs.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="{{asset('/')}}assets/js/jquery-3.6.0.min.js"></script>
+    <script src="{{asset('/')}}assets/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('/')}}assets/js/jquery.appear.js"></script>
+    <script src="{{asset('/')}}assets/js/jquery.easing.min.js"></script>
+    <script src="{{asset('/')}}assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="{{asset('/')}}assets/js/modernizr.custom.13711.js"></script>
+    <script src="{{asset('/')}}assets/js/swiper-bundle.min.js"></script>
+    <script src="{{asset('/')}}assets/js/wow.min.js"></script>
+    <script src="{{asset('/')}}assets/js/progress-bar.min.js"></script>
+    <script src="{{asset('/')}}assets/js/circle-progress.js"></script>
+    <script src="{{asset('/')}}assets/js/isotope.pkgd.min.js"></script>
+    <script src="{{asset('/')}}assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="{{asset('/')}}assets/js/jquery.nice-select.min.js"></script>
+    <script src="{{asset('/')}}assets/js/count-to.js"></script>
+    <script src="{{asset('/')}}assets/js/jquery.scrolla.min.js"></script>
+    <script src="{{asset('/')}}assets/js/YTPlayer.min.js"></script>
+    <script src="{{asset('/')}}assets/js/TweenMax.min.js"></script>
+    <script src="{{asset('/')}}assets/js/loopcounter.js"></script>
+    <script src="{{asset('/')}}assets/js/validnavs.js"></script>
+    <script src="{{asset('/')}}assets/js/main.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {

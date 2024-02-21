@@ -6,6 +6,7 @@ use App\Favourite;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 
 class HomeController extends Controller
 {
@@ -141,7 +142,30 @@ class HomeController extends Controller
         return response()->json(['success' => true, 'data' => $flag]);
     }
 
-    public function testFun(){
-        dd("ok");
+    // public function testFun(){
+    //     dd("ok");
+    // }
+
+    public function ExiProfile(){
+        $matched = User::where('Exhibition','yes')->where('exi_status','accepted')->get();
+        $flag = 'exi';
+        return view('profile', compact('matched','flag'));
+    }
+
+    public function BtoBProfile(){
+        $matched = User::where('btob_meeting','yes')->orwhere('btog_meeting','yes')->get();
+        $flag = 'bto';
+        return view('profile', compact('matched','flag'));
+    }
+
+    public function ViewProfile($id){
+
+        try {
+            $decrypted = Crypt::decrypt($id);
+        } catch (\Exception $e) {
+
+        }
+        $application = User::where('id',$decrypted)->first();
+        return view("view-application", compact('decrypted','application'));
     }
 }
