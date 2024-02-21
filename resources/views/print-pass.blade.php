@@ -138,8 +138,12 @@
                 <div class="card">
                     {{-- <div class="card-header">{{ __('Dashboard') }}</div> --}}
 
-                    {{-- <div class="card-body">
+                    <div class="card-body">
                         <div class="row">
+                            @php
+                                $application_suffix =str_pad($user_info->id, 5, '0', STR_PAD_LEFT);
+                            @endphp
+                            @if ($user_info->Exhibition=='yes')
                             <div class="col-md-3" style="text-align: center;">
                                 <aside class="profile-card" id="printableArea">
                                     <header>
@@ -147,16 +151,18 @@
                                             <img src="assets/logo/nefo_logo.png" alt="">
                                         </a>
                                         <h1>NE Food Pro 2024</h1>
-                                        <h2>B2B Meeting</h2>
+                                        <h2>Exhibitor Pass</h2>
                                     </header>
                                     <div class="profile-bio">
-                                        <h3>Biswajit Laskar</h3>
-                                        <h3>B2B-1234</h3>
+                                        <h3>{{$user_info->first_name.' '.$user_info->middle_name.' '.$user_info->last_name}}</h3>
+                                        <h3>EXI2024{{$application_suffix}}</h3>
                                     </div>
                                 </aside>
                                 </br>
-                                <button class="btn btn-primary btn-xs" onclick="printDiv('printableArea')">Download</button>
+                                {{-- <button class="btn btn-primary btn-xs" onclick="printDiv('printableArea')">Download</button> --}}
                             </div>
+                            @endif
+                            @if ($user_info->btob_meeting=='yes')
                             <div class="col-md-3" style="text-align: center;">
                                 <aside class="profile-card">
                                     <header>
@@ -164,16 +170,18 @@
                                             <img src="assets/logo/nefo_logo.png" alt="">
                                         </a>
                                         <h1>NE Food Pro 2024</h1>
-                                        <h2>B2B Meeting</h2>
+                                        <h2>B2B Meeting Pass</h2>
                                     </header>
                                     <div class="profile-bio">
-                                        <h3>Biswajit Laskar</h3>
-                                        <h3>B2B-1234</h3>
+                                        <h3>{{$user_info->first_name.' '.$user_info->middle_name.' '.$user_info->last_name}}</h3>
+                                        <h3>B2B2024{{$application_suffix}}</h3>
                                     </div>
                                 </aside>
                                 </br>
-                                <button class="btn btn-primary btn-xs">Download</button>
+                                {{-- <button class="btn btn-primary btn-xs">Download</button> --}}
                             </div>
+                            @endif
+                            @if ($user_info->btog_meeting=='yes')
                             <div class="col-md-3" style="text-align: center;">
                                 <aside class="profile-card">
                                     <header>
@@ -181,16 +189,18 @@
                                             <img src="assets/logo/nefo_logo.png" alt="">
                                         </a>
                                         <h1>NE Food Pro 2024</h1>
-                                        <h2>B2B Meeting</h2>
+                                        <h2>B2G Meeting Pass</h2>
                                     </header>
                                     <div class="profile-bio">
-                                        <h3>Biswajit Laskar</h3>
-                                        <h3>B2B-1234</h3>
+                                        <h3>{{$user_info->first_name.' '.$user_info->middle_name.' '.$user_info->last_name}}</h3>
+                                        <h3>B2G2024{{$application_suffix}}</h3>
                                     </div>
                                 </aside>
                                 </br>
-                                <button class="btn btn-primary btn-xs">Download</button>
+                                {{-- <button class="btn btn-primary btn-xs">Download</button> --}}
                             </div>
+                            @endif
+                            @if ($user_info->general=='yes')
                             <div class="col-md-3" style="text-align: center;">
                                 <aside class="profile-card">
                                     <header>
@@ -198,19 +208,24 @@
                                             <img src="assets/logo/nefo_logo.png" alt="">
                                         </a>
                                         <h1>NE Food Pro 2024</h1>
-                                        <h2>B2B Meeting</h2>
+                                        <h2>Visitor Pass</h2>
                                     </header>
                                     <div class="profile-bio">
-                                        <h3>Biswajit Laskar</h3>
-                                        <h3>B2B-1234</h3>
+                                        <h3>{{$user_info->first_name.' '.$user_info->middle_name.' '.$user_info->last_name}}</h3>
+                                        <h3>GEN2024{{$application_suffix}}</h3>
                                     </div>
                                 </aside>
                                 </br>
-                                <button class="btn btn-primary btn-xs">Download</button>
+                                {{-- <button class="btn btn-primary btn-xs">Download</button> --}}
                             </div>
+                            @endif
+
+
+
+
                         </div>
 
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>

@@ -109,7 +109,12 @@ class HomeController extends Controller
             $matched = User::where('btob_meeting','yes')->get();
         }
 
-        return view('home', compact('matched'));
+        if($matched){
+            return view('home', compact('matched'));
+        }else{
+            return view('print-pass', compact('user_info'));
+        }
+
     }
 
 
