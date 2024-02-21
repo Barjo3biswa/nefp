@@ -111,10 +111,8 @@ class HomeController extends Controller
 
 
         if(!empty($matched)){
-            return view('print-pass', compact('user_info'));
-            // return view('home', compact('matched'));
+            return view('home', compact('matched'));
         }else{
-            // return view('print-pass', compact('user_info'));
             return view('print-pass', compact('user_info'));
         }
 
