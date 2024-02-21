@@ -121,8 +121,13 @@ class HomeController extends Controller
 
 
     public function printPass(){
-        $user_info = User::where('id',Auth::User()->id)->first();
-        return view('print-pass', compact('user_info'));
+        if(Auth::check()){
+            $user_info = User::where('id',Auth::User()->id)->first();
+            return view('print-pass', compact('user_info'));
+        }else{
+            return redirect()->route('login');
+        }
+
     }
 
     public function makeFav(Request $request){
