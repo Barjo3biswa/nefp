@@ -19,6 +19,9 @@
 @endsection
 @section('content')
     <div class="container">
+    <div class="alert alert-danger" role="alert">
+        This Registration Process will closed on 23-02-2024 at 5:00 P.M.
+    </div>
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card" style="font-size: 16px;">
