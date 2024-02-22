@@ -152,7 +152,7 @@ class HomeController extends Controller
     // }
 
     public function ExiProfile(){
-        $matched = User::where('Exhibition','yes')->where('exi_status','accepted')->get();
+        $matched = User::where('Exhibition','yes')/* ->where('exi_status','accepted') */->get();
         $flag = 'exi';
         return view('profile', compact('matched','flag'));
     }
