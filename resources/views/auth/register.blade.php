@@ -19,9 +19,9 @@
 @endsection
 @section('content')
     <div class="container">
-    <div class="alert alert-danger" role="alert">
+    {{-- <div class="alert alert-danger" role="alert">
         This Registration Process will closed on 23-02-2024 at 5:00 P.M.
-    </div>
+    </div> --}}
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card" style="font-size: 16px;">
@@ -610,7 +610,7 @@
                                     <div class="col-md-11">
                                         <label for="second" style="margin-top: 10px;"> {{-- Enabling Environment of MSME
                                             development and avenues for enhancing exports from NE region to South East Asian
-                                            Market --}} : Branding, Marketing and AgriFood Processing Start-Up</strong></label><br>
+                                            Market --}}Branding, Marketing and AgriFood Processing Start-Up</strong></label><br>
                                     </div>
                                 </div>
                                 {{-- <div class="form-group row" >
