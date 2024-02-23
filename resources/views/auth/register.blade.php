@@ -584,11 +584,11 @@
                                         <label for=""><strong>Are you also interested in the following events</strong></label>
                                     </div>
                                 </div>
-                                <div class="form-group row" >
+                                {{-- <div class="form-group row" >
                                     <div class="col-md-6" >
                                         <label for="" stryle="margin-left:10px;"><strong>Technical Seminars:</strong></label>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="form-group row">
                                     <div class="col-md-1">
                                         <input type="checkbox" id="first" name="first" value="yes"
@@ -596,9 +596,9 @@
                                             {{ old('first') == 'yes' ? 'checked' : '' }} style="float:right">
                                     </div>
                                     <div class="col-md-11">
-                                        <label for="first" style="margin-top: 10px;"> Enhancing food processing sector
+                                        <label for="first" style="margin-top: 10px;"> {{-- Enhancing food processing sector
                                             through value chain interventions of major agri-horti commodities of NE
-                                            India</strong></label><br>
+                                            India --}} Supply Chain Integration of NE Agri Produces for E-Commerce Facilitation</strong></label><br>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -608,16 +608,16 @@
                                             {{ old('second') == 'yes' ? 'checked' : '' }} style="float:right">
                                     </div>
                                     <div class="col-md-11">
-                                        <label for="second" style="margin-top: 10px;"> Enabling Environment of MSME
+                                        <label for="second" style="margin-top: 10px;"> {{-- Enabling Environment of MSME
                                             development and avenues for enhancing exports from NE region to South East Asian
-                                            Market</strong></label><br>
+                                            Market --}} : Branding, Marketing and AgriFood Processing Start-Up</strong></label><br>
                                     </div>
                                 </div>
-                                <div class="form-group row" >
+                                {{-- <div class="form-group row" >
                                     <div class="col-md-6" stryle="margin-left:10px;" >
                                         <label for=""><strong>Start-up Interaction:</strong></label>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="form-group row">
                                     <div class="col-md-1">
                                         <input type="checkbox" id="third" name="third" value="yes"
@@ -625,8 +625,8 @@
                                             {{ old('third') == 'yes' ? 'checked' : '' }} style="float:right">
                                     </div>
                                     <div class="col-md-11">
-                                        <label for="third" style="margin-top: 10px;"> Food Start Up- Entrepreneurial
-                                            journeys of NE Soil</strong></label><br>
+                                        <label for="third" style="margin-top: 10px;">{{--  Food Start Up- Entrepreneurial
+                                            journeys of NE Soil --}}Exports of NE based Agri-Horti and Food Products</strong></label><br>
                                     </div>
                                 </div>
                                 <div class="form-group row">
